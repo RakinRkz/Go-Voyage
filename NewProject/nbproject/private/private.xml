@@ -12,12 +12,15 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/Maps.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/seatSelectionView.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/UI.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/DashboardController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/UIController.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/MapsController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/NewProject.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/databaseCon.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/seatSelectionController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/dashboard.css</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/Dashboard.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/ShowResultsController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -58,7 +58,7 @@ public class DashboardController implements Initializable {
     
     @FXML
     void historyButtonOnAction(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("PurchaseHistory.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Purchasehistory.fxml"));
         stage= (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
