@@ -1,4 +1,4 @@
-package Utility;
+package newproject;
 
 public class TrainInfo {
 

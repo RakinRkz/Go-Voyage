@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.ShowResultsController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #001219;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.ShowResultsController">
    <children>
       <TableView fx:id="TrainTableView" layoutX="236.0" layoutY="179.0" prefHeight="400.0" prefWidth="800.0">
         <columns>
@@ -28,11 +28,12 @@
       <ComboBox fx:id="classBox" layoutX="722.0" layoutY="88.0" prefHeight="28.0" prefWidth="179.0" promptText="Choose a class" />
       <ComboBox fx:id="passengerCountBox" layoutX="411.0" layoutY="143.0" prefHeight="28.0" prefWidth="179.0" promptText="No of passengers" />
       <ComboBox fx:id="ChildCountBox" layoutX="722.0" layoutY="143.0" prefHeight="28.0" prefWidth="179.0" promptText="Child" />
-      <Button fx:id="searchButton" layoutX="948.0" layoutY="90.0" mnemonicParsing="false" onAction="#findButtonAction" prefHeight="30.0" prefWidth="88.0" text="Find" />
+      <Button fx:id="searchButton" layoutX="948.0" layoutY="64.0" mnemonicParsing="false" onAction="#findButtonAction" prefHeight="30.0" prefWidth="88.0" text="Find" />
       <ImageView fx:id="MainLogo" fitHeight="150.0" fitWidth="200.0" layoutX="73.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/ticket.png" />
          </image>
       </ImageView>
+      <Button fx:id="searchButton1" layoutX="948.0" layoutY="116.0" mnemonicParsing="false" onAction="#confirmButtonAction" prefHeight="30.0" prefWidth="88.0" text="Confirm" />
    </children>
 </Pane>

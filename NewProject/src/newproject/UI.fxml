@@ -46,7 +46,7 @@
                   <Image url="@../images/user.png" />
                </image>
             </ImageView>
-            <TextField fx:id="usernameTextField" layoutX="71.0" layoutY="136.0" promptText="Username">
+            <TextField fx:id="usernameTextField" layoutX="71.0" layoutY="136.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 2 0;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -68,7 +68,7 @@
                <effect>
                   <Glow />
                </effect></Button>
-            <PasswordField fx:id="passwordTextField" layoutX="72.0" layoutY="174.0" promptText="Password">
+            <PasswordField fx:id="passwordTextField" layoutX="72.0" layoutY="174.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 2 0;">
                <effect>
                   <Glow />
                </effect></PasswordField>

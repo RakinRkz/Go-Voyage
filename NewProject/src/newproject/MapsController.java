@@ -1,4 +1,4 @@
-package Controller;
+package newproject;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,9 +28,10 @@ public class MapsController implements Initializable {
         engine = webView.getEngine();
         loadPage();
     }
+    String s = "Railgate Rajshahi";
     @FXML
     void loadPage() {
-        engine.load("https://www.googlemaps.com");
+        engine.load("https://www.google.com/maps");
     }
     @FXML
     void zoomIn(ActionEvent event) {

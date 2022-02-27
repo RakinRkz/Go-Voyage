@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Controller;
+package newproject;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -19,7 +15,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.sql.*;
-import Utility.databaseCon;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 /**
  * FXML Controller class
@@ -27,7 +26,11 @@ import Utility.databaseCon;
  * @author MSI
  */
 public class UIController implements Initializable {
-
+    
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    
     @FXML
     private ImageView MainLogo;
 
@@ -48,7 +51,7 @@ public class UIController implements Initializable {
     @FXML
     private Label loginMessageLabel;
     
-    public void loginButtonOnAction(ActionEvent event){
+    public void loginButtonOnAction(ActionEvent event) throws IOException{
         if(usernameTextField.getText().isBlank()){
             loginMessageLabel.setText("Enter Username!");
         }
@@ -58,6 +61,12 @@ public class UIController implements Initializable {
         else{
             ValidateLogin();
         }
+        
+        Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
+        stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
     @FXML
