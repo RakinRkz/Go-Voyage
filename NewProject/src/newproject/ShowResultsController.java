@@ -99,7 +99,7 @@ public class ShowResultsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         addInfo();
-        fromBox.getSelectionModel().select(0);
+        //fromBox.getSelectionModel().select(0);
         
         //System.out.println("Hello World");
         TrainTableView.setPlaceholder(new Label(""));
@@ -111,6 +111,8 @@ public class ShowResultsController implements Initializable {
     }
     
     public void findButtonAction(ActionEvent e){
+        
+        TrainTableView.getItems().clear();
         databaseCon dbConnection = new databaseCon();
         Connection conDBNow = dbConnection.getConnection();
       

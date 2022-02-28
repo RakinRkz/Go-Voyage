@@ -59,14 +59,16 @@ public class UIController implements Initializable {
             loginMessageLabel.setText("Enter Password!");
         }
         else{
-            ValidateLogin();
+            if(ValidateLogin()){
+                Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
+            stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            }
         }
         
-        Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-        stage= (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        
     }
     
     @FXML
@@ -90,7 +92,7 @@ public class UIController implements Initializable {
         
     }
        
-    public void ValidateLogin(){
+    public boolean ValidateLogin(){
         databaseCon connectNow = new databaseCon();
         Connection conDB = connectNow.getConnection();
         
@@ -104,6 +106,7 @@ public class UIController implements Initializable {
                 if(rset.getInt(1) == 1){
                     loginMessageLabel.setTextFill(Color.web("#26A65B"));
                     loginMessageLabel.setText("Login Successful!!" + " WELCOME ");
+                    return true;
                 }
                 else{
                     loginMessageLabel.setTextFill(Color.web("#CF000F"));
@@ -113,5 +116,6 @@ public class UIController implements Initializable {
         }
         catch(SQLException e){
         }
+        return false;
     }
 }
