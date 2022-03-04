@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class RegisterPageController implements Initializable {
 
@@ -43,7 +44,7 @@ public class RegisterPageController implements Initializable {
     void registerButtonOnAction(ActionEvent event) {
         String fullName = fullNameTextField.getText();
         String email = emailTextField.getText();
-        String password = passwordTextField.getText();
+        String password = DigestUtils.sha256Hex(passwordTextField.getText());
         
         databaseCon connectNow = new databaseCon();
         Connection conDB = connectNow.getConnection();

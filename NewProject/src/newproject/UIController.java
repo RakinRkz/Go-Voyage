@@ -22,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * FXML Controller class
@@ -108,8 +109,11 @@ public class UIController implements Initializable {
     public boolean ValidateLogin() {
         databaseCon connectNow = new databaseCon();
         Connection conDB = connectNow.getConnection();
+        
+        String username = usernameTextField.getText();
+        String password = DigestUtils.sha256Hex(passwordTextField.getText());
 
-        String verifyLogin = "SELECT count(1) FROM new_table WHERE username = '" + usernameTextField.getText() + "' AND PASSWORD= '" + passwordTextField.getText() + "';";
+        String verifyLogin = "SELECT count(1) FROM new_table WHERE username = '" + username + "' AND PASSWORD= '" + password + "';";
 
         try {
             Statement stmt = conDB.createStatement();
