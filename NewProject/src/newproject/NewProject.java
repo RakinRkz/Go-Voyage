@@ -17,6 +17,7 @@ public class NewProject extends Application {
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
         primaryStage.show();
+        primaryStage.centerOnScreen();
     }
 
     public static void main(String[] args) {

@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #001219;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.ShowResultsController">
    <children>
-      <TableView fx:id="TrainTableView" layoutX="236.0" layoutY="179.0" prefHeight="400.0" prefWidth="800.0">
+      <TableView fx:id="TrainTableView" layoutX="236.0" layoutY="179.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: white;">
         <columns>
             <TableColumn fx:id="trainIDColumn" prefWidth="79.99995422363281" text="Train No" />
           <TableColumn fx:id="FromColumn" prefWidth="103.20004272460938" text="FROM" />

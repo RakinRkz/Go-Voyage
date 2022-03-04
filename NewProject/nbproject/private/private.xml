@@ -12,12 +12,20 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/UI.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/Purchasehistory.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/UIController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/NewProject.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/databaseCon.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/Dashboard.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/ShowResultsController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/RegisterPage.fxml</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/DashboardController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/MapsController.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/NewProject.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/PurchasehistoryController.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/ShowResultsController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/seatSelectionController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/RegisterPageController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/registerpage.css</file>
         </group>
     </open-files>
 </project-private>
