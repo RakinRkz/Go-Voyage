@@ -25,20 +25,26 @@
             </Label>
             <TextField fx:id="fullNameTextField" layoutX="101.0" layoutY="80.0" promptText="Full Name" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1.5 0;" />
             <TextField fx:id="emailTextField" layoutX="101.0" layoutY="119.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0 0 1.5 0;" />
-            <Button layoutX="66.0" layoutY="246.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #263f73; -fx-text-fill: white; -fx-background-radius: 0;" text="Register">
+            <Button layoutX="68.0" layoutY="236.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #263f73; -fx-text-fill: white; -fx-background-radius: 0;" text="Register">
                <effect>
                   <Glow />
                </effect>
                <font>
                   <Font name="Calisto MT Bold" size="15.0" />
-               </font></Button>
-            <Button fx:id="cancelButton" layoutX="67.0" layoutY="289.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #ff1a1a; -fx-text-fill: white; -fx-background-radius: 0;" text="Cancel">
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="cancelButton" layoutX="67.0" layoutY="279.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="30.0" prefWidth="185.0" style="-fx-background-color: #ff1a1a; -fx-text-fill: white; -fx-background-radius: 0;" text="Cancel">
                <effect>
                   <Glow />
                </effect>
                <font>
                   <Font name="Calisto MT Bold" size="15.0" />
-               </font></Button>
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="61.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/id-card.png" />

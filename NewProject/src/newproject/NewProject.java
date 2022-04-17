@@ -7,13 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class NewProject extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("UI.fxml"));
-        
+        Parent root = FXMLLoader.load(getClass().getResource("AirplaneList.fxml"));
+
         Scene scene = new Scene(root);
-        
+
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -23,5 +23,5 @@ public class NewProject extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

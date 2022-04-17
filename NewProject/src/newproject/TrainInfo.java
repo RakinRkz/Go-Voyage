@@ -1,11 +1,14 @@
 package newproject;
 
+import javafx.scene.control.Button;
+
 public class TrainInfo {
 
     Integer TrainID;
     String From,To,Chair;
     Integer Capacity;
     String Date,Station;
+    Button confirmbtn;
 
     public TrainInfo(Integer TrainID, String From, String To, String Chair, Integer Capacity,String Date,String Station) {
         this.TrainID = TrainID;
@@ -15,6 +18,7 @@ public class TrainInfo {
         this.Chair = Chair;
         this.Station = Station;
         this.Capacity = Capacity;
+        this.confirmbtn = new Button("CONFIRM");
     }
 
     public Integer getTrainID() {
@@ -54,6 +58,14 @@ public class TrainInfo {
 
     public void setTo(String To) {
         this.To = To;
+    }
+
+    public Button getConfirmbtn() {
+        return confirmbtn;
+    }
+
+    public void setConfirmbtn(Button confirmbtn) {
+        this.confirmbtn = confirmbtn;
     }
 
     public void setDate(String Date) {

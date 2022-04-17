@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.PlaneViewThumbController">
+   <children>
+      <Line endX="-12.707107543945312" endY="0.5928812026977539" startX="-100.0" strokeMiterLimit="8.0" translateX="257.0" translateY="62.0" />
+      <Text fx:id="EndTime" strokeType="OUTSIDE" strokeWidth="0.0" text="13.35" translateX="350.0" translateY="50.0">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="TikcetPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="4375 BDT" translateX="490.0" translateY="40.0">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="CompanyLogo" fitHeight="51.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true" translateX="50.0">
+         <image>
+            <Image url="@../images/BimanBangladesh.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="selectBtn" mnemonicParsing="false" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: #118ab2; -fx-text-fill: white; -fx-background-radius: 0;" text="Select" translateX="410.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="CompanyTextField" alignment="CENTER" prefHeight="44.0" prefWidth="170.0" text="Biman Bangladesh" translateY="-25.0">
+         <font>
+            <Font name="Bodoni MT Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text fx:id="StartTime" strokeType="OUTSIDE" strokeWidth="0.0" text="12.00" translateX="200.0" translateY="-95.0">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Text>
+   </children>
+</VBox>

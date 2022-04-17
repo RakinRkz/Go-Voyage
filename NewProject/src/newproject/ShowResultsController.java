@@ -56,11 +56,11 @@ public class ShowResultsController implements Initializable {
     @FXML
     private TableView<TrainInfo> TrainTableView;
     
-    @FXML
-    private TableColumn<TrainInfo, String> FromColumn;
-
-    @FXML
-    private TableColumn<TrainInfo, String> ToColumn;
+//    @FXML
+//    private TableColumn<TrainInfo, String> FromColumn;
+//
+//    @FXML
+//    private TableColumn<TrainInfo, String> ToColumn;
 
     @FXML
     private TableColumn<TrainInfo, Integer> capacityColumn;
@@ -75,7 +75,12 @@ public class ShowResultsController implements Initializable {
     
     @FXML
     private TableColumn<TrainInfo, Integer> trainIDColumn;
-
+    
+    @FXML
+    private TableColumn<TrainInfo, Button> confirmBtnColumn; 
+    
+    @FXML
+    private Button confirmTableButton;
      @FXML
     private ImageView MainLogo;
 
@@ -144,12 +149,13 @@ public class ShowResultsController implements Initializable {
             }
             
             trainIDColumn.setCellValueFactory(new PropertyValueFactory<>("TrainID"));
-            FromColumn.setCellValueFactory(new PropertyValueFactory<>("From"));
-            ToColumn.setCellValueFactory(new PropertyValueFactory<>("To"));
+//            FromColumn.setCellValueFactory(new PropertyValueFactory<>("From"));
+//            ToColumn.setCellValueFactory(new PropertyValueFactory<>("To"));
             classColumn.setCellValueFactory(new PropertyValueFactory<>("Chair"));
             capacityColumn.setCellValueFactory(new PropertyValueFactory<>("Capacity"));
             dateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
             stationColumn.setCellValueFactory(new PropertyValueFactory<>("Station"));
+            confirmBtnColumn.setCellValueFactory(new PropertyValueFactory<>("confirmbtn"));
             
             
             

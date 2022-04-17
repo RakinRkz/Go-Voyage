@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,6 +47,8 @@ public class RegisterPageController implements Initializable {
         String email = emailTextField.getText();
         String password = DigestUtils.sha256Hex(passwordTextField.getText());
         
+        validateMail(email);
+        
         databaseCon connectNow = new databaseCon();
         Connection conDB = connectNow.getConnection();
         
@@ -80,4 +83,18 @@ public class RegisterPageController implements Initializable {
         // TODO
     }    
     
+    boolean validateMail(String mail){
+        if(mail == null || mail.isEmpty()){
+            return false;
+        }
+        String emailRegeX = "^[a-zA-Z0-9_+&*-]+(?:\\." + 
+                            "[a-zA-Z0-9_+&*-]+)*@" + 
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        
+        Pattern pat = Pattern.compile(emailRegeX);
+        
+        if(pat.matcher(mail).matches()) return true;
+        
+        return false;
+    }
 }

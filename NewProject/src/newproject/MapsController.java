@@ -27,11 +27,14 @@ public class MapsController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         engine = webView.getEngine();
         loadPage();
+//        url = this.getClass().getResource("map1.html");
+//        engine.load(url.toString());
     }
-    String s = "Railgate Rajshahi";
+//    String s = "Railgate Rajshahi";
     @FXML
     void loadPage() {
-        engine.load("https://www.google.com/maps");
+        engine.load("https://www.google.com/maps/dir/23.9489053,90.3790392/Gazipur+Chowrasta+Bus+Stand,+Dhaka+-+Mymensingh+Highway,+Gazipur/@23.9684188,90.3627113,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3755db7b214cf35b:0xe9268bbc62f8efa0!2m2!1d90.381628!2d23.9899118");
+//        engine.load( getClass().getResource("/map1.html").toString() );
     }
     @FXML
     void zoomIn(ActionEvent event) {

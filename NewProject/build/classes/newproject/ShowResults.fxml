@@ -11,15 +11,14 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #001219;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.ShowResultsController">
    <children>
-      <TableView fx:id="TrainTableView" layoutX="236.0" layoutY="179.0" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <TableView fx:id="TrainTableView" layoutX="294.0" layoutY="186.0" prefHeight="400.0" prefWidth="742.0" style="-fx-background-color: white;">
         <columns>
-            <TableColumn fx:id="trainIDColumn" prefWidth="79.99995422363281" text="Train No" />
-          <TableColumn fx:id="FromColumn" prefWidth="103.20004272460938" text="FROM" />
-          <TableColumn fx:id="ToColumn" prefWidth="103.199951171875" text="TO" />
-            <TableColumn fx:id="dateColumn" prefWidth="142.39996337890625" text="Date" />
-            <TableColumn fx:id="classColumn" prefWidth="114.39996337890625" text="Class" />
-            <TableColumn fx:id="capacityColumn" prefWidth="108.7999267578125" resizable="false" text="Capacity" />
-            <TableColumn fx:id="stationColumn" prefWidth="150.00018310546875" text="Station" />
+            <TableColumn fx:id="trainIDColumn" prefWidth="96.80000305175781" text="Train No" />
+            <TableColumn fx:id="dateColumn" prefWidth="126.39999389648438" text="Date" />
+            <TableColumn fx:id="classColumn" prefWidth="139.20001220703125" text="Class" />
+            <TableColumn fx:id="capacityColumn" prefWidth="139.199951171875" resizable="false" text="Capacity" />
+            <TableColumn fx:id="stationColumn" prefWidth="131.20001220703125" text="Station" />
+            <TableColumn fx:id="confirmBtnColumn" prefWidth="109.60009765625" text="Action" />
         </columns>
       </TableView>
       <ComboBox fx:id="fromBox" layoutX="411.0" layoutY="36.0" prefHeight="28.0" prefWidth="179.0" promptText="From" />

@@ -111,7 +111,7 @@ public class UIController implements Initializable {
         Connection conDB = connectNow.getConnection();
         
         String username = usernameTextField.getText();
-        String password = DigestUtils.sha256Hex(passwordTextField.getText());
+        String password = passwordTextField.getText();
 
         String verifyLogin = "SELECT count(1) FROM new_table WHERE username = '" + username + "' AND PASSWORD= '" + password + "';";
 
