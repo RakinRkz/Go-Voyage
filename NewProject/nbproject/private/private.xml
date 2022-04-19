@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
             <url>src/newproject/UI.fxml</url>
             <bookmark id="1">
@@ -9,16 +9,22 @@
                 <key/>
             </bookmark>
         </file>
+        <file>
+            <url>src/newproject/ShowResultsController.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>150</line>
+                <key/>
+            </bookmark>
+        </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/Maps.fxml</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/TrainInfo.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/UIController.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/MapsController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/PaymentInfo.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/DashboardController.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/NewProject.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/RegisterPageController.java</file>
-            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/Dashboard.fxml</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/PurchasehistoryController.java</file>
+            <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/userInfo.java</file>
             <file>file:/C:/Users/MSI/Documents/NetBeansProjects/NewProject/src/newproject/ShowResultsController.java</file>
         </group>
     </open-files>

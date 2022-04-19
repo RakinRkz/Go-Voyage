@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="594.0" prefWidth="1066.0" stylesheets="@chooseTransport.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.ChooseTransportController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/unknown.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="377.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose type of transport">
+         <font>
+            <Font name="Bell MT" size="31.0" />
+         </font>
+      </Text>
+      <Button fx:id="trainBtn" layoutX="64.0" layoutY="387.0" mnemonicParsing="false" onAction="#trainBtnOnAction" prefHeight="102.0" prefWidth="203.0" style="-fx-background-color: #3fc1C9; -fx-text-fill: white; -fx-background-radius: 30 30 30 30;" text="Train">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="busBtn" layoutX="432.0" layoutY="387.0" mnemonicParsing="false" onAction="#busBtnOnAction" prefHeight="102.0" prefWidth="203.0" style="-fx-background-color: #3fc1C9; -fx-text-fill: white; -fx-background-radius: 30;" text="Bus">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="planeBtn" layoutX="802.0" layoutY="387.0" mnemonicParsing="false" onAction="#planeBtnOnAction" prefHeight="102.0" prefWidth="203.0" style="-fx-background-color: #3fc1C9; -fx-text-fill: white; -fx-background-radius: 30;" text="Airplane">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

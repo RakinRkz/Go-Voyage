@@ -24,17 +24,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 import org.apache.commons.codec.digest.DigestUtils;
 
-/**
- * FXML Controller class
- *
- * @author MSI
- */
 public class UIController implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
-
+    
+    public userInfo current_user = new userInfo();
     @FXML
     private ImageView MainLogo;
 
@@ -62,6 +58,7 @@ public class UIController implements Initializable {
             loginMessageLabel.setText("Enter Password!");
         } else {
             if (ValidateLogin()) {
+                userInfo.current_username = usernameTextField.getText();
                 Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
@@ -112,8 +109,9 @@ public class UIController implements Initializable {
         
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
+        String hashedPassword = DigestUtils.sha256Hex(password);
 
-        String verifyLogin = "SELECT count(1) FROM new_table WHERE username = '" + username + "' AND PASSWORD= '" + password + "';";
+        String verifyLogin = "SELECT count(1) FROM mydb.user WHERE username = '" + username + "' AND PASSWORD= '" + hashedPassword + "';";
 
         try {
             Statement stmt = conDB.createStatement();

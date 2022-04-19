@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.BusViewThumbController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BDT" translateX="540.0" translateY="53.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <VBox maxWidth="242.0" prefHeight="0.0" prefWidth="242.0">
+         <children>
+            <Text fx:id="TrainName" fill="#ff7c00" strokeType="OUTSIDE" strokeWidth="0.0" text="BANALATA EXPRESS" translateX="30.0" translateY="15.0">
+               <font>
+                  <Font name="Bell MT" size="17.0" />
+               </font>
+            </Text>
+            <Text fx:id="TrainClass" fill="#00e72a" strokeType="OUTSIDE" strokeWidth="0.0" text="[S_CHAIR]" translateX="80.0" translateY="20.0">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <HBox prefHeight="70.0" prefWidth="200.0" translateY="40.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FROM STATION: " translateX="25.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TO STATION: " translateX="-65.0" translateY="20.0" />
+                  <Text fx:id="FromStation" strokeType="OUTSIDE" strokeWidth="0.0" text="Rajshahi" translateX="-40.0" />
+                  <Text fx:id="ToStation" strokeType="INSIDE" strokeWidth="0.0" text="Dhaka" translateX="-100.0" translateY="20.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Text fx:id="Price" strokeType="OUTSIDE" strokeWidth="0.0" text="375" translateX="500.0" translateY="-20.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dept Time" translateX="280.0" translateY="-3.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="DeptTime" strokeType="OUTSIDE" strokeWidth="0.0" text="7.00 AM" translateX="350.0" translateY="-20.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="ViewSeatsBtn" mnemonicParsing="false" onAction="#viewSeatBtnOnAction" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: #2a9d8f; -fx-background-radius: 10 10 10 10; -fx-text-fill: white;" text="View Seats" translateX="490.0" translateY="-20.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</VBox>

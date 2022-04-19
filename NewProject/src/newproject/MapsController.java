@@ -1,41 +1,75 @@
 package newproject;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 public class MapsController implements Initializable {
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     private TextField searchTextField;
 
     @FXML
     private WebView webView;
-    
+
     @FXML
     private Button load;
     
-    private WebEngine engine;
+    @FXML
+    private Button loadBtn;
     
+    @FXML
+    private Button proceed_payment_btn;
+
+    private WebEngine engine;
+
+    private String startLocation;
+    
+    String company;
+    String endLocation;
+    String deptTime;
+    String fare;
+    
+    void showLocation(String companyName,String start,String end,String dept,String price) {
+        company = companyName;
+        startLocation = start;
+        endLocation = end;
+        deptTime = dept;
+        fare = price;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        engine = webView.getEngine();
-        loadPage();
-//        url = this.getClass().getResource("map1.html");
-//        engine.load(url.toString());
+        //TODO
     }
-//    String s = "Railgate Rajshahi";
+
     @FXML
-    void loadPage() {
-        engine.load("https://www.google.com/maps/dir/23.9489053,90.3790392/Gazipur+Chowrasta+Bus+Stand,+Dhaka+-+Mymensingh+Highway,+Gazipur/@23.9684188,90.3627113,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3755db7b214cf35b:0xe9268bbc62f8efa0!2m2!1d90.381628!2d23.9899118");
-//        engine.load( getClass().getResource("/map1.html").toString() );
+    void loadLocation(String url) {
+        engine = webView.getEngine();
+        engine.load(url);
     }
+    
     @FXML
     void zoomIn(ActionEvent event) {
         webView.setZoom(1.25);
@@ -44,6 +78,43 @@ public class MapsController implements Initializable {
     @FXML
     void zoomOut(ActionEvent event) {
         webView.setZoom(.75);
-    }    
+    }
+    @FXML
+    void loadButtonOnAction(ActionEvent event) {
+        databaseCon dbConnection = new databaseCon();
+        Connection conDBNow = dbConnection.getConnection();
+
+        String query = "SELECT url from mydb.train_station_location WHERE location = '" + startLocation + "' ";
+        System.out.println(startLocation);
+        try {
+            Statement stmt = conDBNow.createStatement();
+            ResultSet rset = stmt.executeQuery(query);
+            while (rset.next()) {
+                String queryUrl = rset.getString("url");
+                System.out.println(queryUrl);
+                loadLocation(queryUrl);
+
+            }
+        } catch (SQLException ex) {
+
+        }
+    }
     
+    @FXML
+    void proceed_payment_ButtonOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("payment.fxml"));
+        root = loader.load();
+        PaymentController paymentController = loader.getController();
+        paymentController.saveInfo(company,startLocation,endLocation,deptTime,fare);
+        
+        stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+    }
+    
+
 }

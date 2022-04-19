@@ -12,8 +12,12 @@ import java.net.URL;
 import java.util.*;
 import java.util.ResourceBundle;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class seatSelectionController extends Thread implements Initializable, EventHandler<ActionEvent> {
@@ -31,8 +35,18 @@ public class seatSelectionController extends Thread implements Initializable, Ev
     @FXML
     Button  B1, B2, B3; //these are booked
     
+    
+    @FXML
+    private ImageView backBtn;
+
     @FXML
     private Button confirmButton;
+
+    @FXML
+    private ImageView exitBtn;
+
+    @FXML
+    private ImageView homeBtn;
 
     @FXML
     protected void selectSeat(ActionEvent e) {
@@ -101,10 +115,57 @@ public class seatSelectionController extends Thread implements Initializable, Ev
     
     @FXML
     void confirmButtonOnAction(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("Maps.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Maps.fxml"));
+        root = loader.load();
+        MapsController mapsController = loader.getController();
+        mapsController.showLocation(company_Name,stationLocation,end_location,dept_time,total_price);
+        
         stage= (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    
+    String company_Name;
+    String stationLocation;
+    String end_location;
+    String dept_time;
+    String total_price;
+    public void saveLocation(String companyName,String startStation,String endStation,String deptTime,String price){
+        //System.out.println(startStation);
+        stationLocation = startStation;
+        company_Name = companyName;
+        end_location = endStation;
+        dept_time= deptTime;
+        total_price = price;
+    }
+    
+     @FXML
+    void backBtnOnAction(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ChooseTransport.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+    }
+    @FXML
+    void exitBtnOnAction(MouseEvent event) {
+        Stage stage = (Stage) exitBtn.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    void homeBtnOnAction(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
     }
 }

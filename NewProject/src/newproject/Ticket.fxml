@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="ticketBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #364f6b; -fx-border-color: black; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.TicketController">
+   <children>
+      <Text fx:id="comapnyName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="Bangladesh Railway">
+         <VBox.margin>
+            <Insets left="200.0" top="20.0" />
+         </VBox.margin>
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="E-Ticket No " translateX="5.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="FromLocation" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Rajshahi" translateX="50.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="From: " translateY="-20.0">
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="To: " translateY="-20.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </Text>
+      <Text fx:id="ToLocation" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dhaka" translateX="50.0" translateY="-40.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dept Time: " translateY="-20.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </Text>
+      <Text fx:id="time" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="7.00 AM" translateX="80.0" translateY="-40.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Fare price:" translateY="-40.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </Text>
+      <Text fx:id="price" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="600 BDT" translateX="80.0" translateY="-60.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="200.0" />
+         </VBox.margin>
+      </Text>
+      <Text fx:id="ticketNO" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: white;" text="1C87BHNS9I" translateX="5.0" translateY="-150.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="goBackBtn" mnemonicParsing="false" onAction="#goBackBtnOnAction" style="-fx-background-color: #24A0ED; -fx-background-radius: 20;" text="Go Back" textFill="WHITE" translateX="500.0" translateY="-100.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</VBox>
