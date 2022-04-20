@@ -7,10 +7,12 @@ public class Airplane {
 
     private String logo;
     private String company;
-    private String StarTime;
-    private String LandTime;
+    private String Star;
+    private String Land;
     private String price;
     private Button selectBtn;
+    public String dept_time;
+    
 
     public String getLogo() {
         return logo;
@@ -28,20 +30,20 @@ public class Airplane {
         this.company = company;
     }
 
-    public String getStarTime() {
-        return StarTime;
+    public String getStar() {
+        return Star;
     }
 
-    public void setStarTime(String StarTime) {
-        this.StarTime = StarTime;
+    public void setStar(String StarTime) {
+        this.Star = StarTime;
     }
 
-    public String getLandTime() {
-        return LandTime;
+    public String getLand() {
+        return Land;
     }
 
-    public void setLandTime(String LandTime) {
-        this.LandTime = LandTime;
+    public void setLand(String LandTime) {
+        this.Land = LandTime;
     }
 
     public String getPrice() {

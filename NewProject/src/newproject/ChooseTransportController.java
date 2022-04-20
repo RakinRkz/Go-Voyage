@@ -32,6 +32,7 @@ public class ChooseTransportController implements Initializable {
     @FXML
     void busBtnOnAction(ActionEvent event) throws IOException {
         String type = "bus";
+        userInfo.vType = "bus";
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowResults.fxml"));
         Parent root  = loader.load();
         
@@ -47,6 +48,7 @@ public class ChooseTransportController implements Initializable {
 
     @FXML
     void planeBtnOnAction(ActionEvent event) throws IOException {
+        userInfo.vType = "airplane";
         String type = "airplane";
         FXMLLoader loader = new FXMLLoader(getClass().getResource("AirplaneList.fxml"));
         Parent root  = loader.load();
@@ -64,6 +66,7 @@ public class ChooseTransportController implements Initializable {
     @FXML
     void trainBtnOnAction(ActionEvent event) throws IOException {
         String type = "train";
+        userInfo.vType = "train";
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowResults.fxml"));
         Parent root  = loader.load();
         

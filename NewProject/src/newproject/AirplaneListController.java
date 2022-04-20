@@ -114,8 +114,10 @@ public class AirplaneListController implements Initializable {
         databaseCon dbConnection = new databaseCon();
         Connection conDBNow = dbConnection.getConnection();
         
-         System.out.println("Connection Successful");
-
+        System.out.println("Connection Successful");
+        
+//        userInfo.ticket_date = DateSelect.getValue().toString();
+        
         String planeViewQuery = "SELECT company_name, start, end ,fare, class, time , total_seat FROM vehicle where start= '"
                 + FromSelect.getValue().toString() + "' AND end= '" + ToSelect.getValue().toString() + "' AND type = '"+ vType +"' "
                 + "AND date = '"+DateSelect.getValue().toString() +"'";
@@ -131,9 +133,10 @@ public class AirplaneListController implements Initializable {
 
             while (rset.next()) {
                 String queryCompany = rset.getString("company_name");
-                String queryStartTime = rset.getString("start");
-                String queryEndTime = rset.getString("end");
+                String queryStart = rset.getString("start");
+                String queryEnd = rset.getString("end");
                 String queryPrice = rset.getString("fare");
+                String queryDeptTime = rset.getString("time");
 
                 Airplane plane = new Airplane();
                 plane.setCompany(queryCompany);
@@ -150,9 +153,10 @@ public class AirplaneListController implements Initializable {
                     default:
                         break;
                 }
-                plane.setStarTime(queryStartTime);
-                plane.setLandTime(queryEndTime);
+                plane.setStar(queryStart);
+                plane.setLand(queryEnd);
                 plane.setPrice(queryPrice);
+                plane.dept_time = queryDeptTime;
                 planes.add(plane);
             }
             

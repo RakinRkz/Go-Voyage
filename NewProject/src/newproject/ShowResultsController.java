@@ -109,7 +109,8 @@ public class ShowResultsController implements Initializable {
         trains.clear();
         databaseCon dbConnection = new databaseCon();
         Connection conDBNow = dbConnection.getConnection();
-      
+        userInfo.ticket_date = datePickerBox.getValue().toString();
+        
         System.out.println(datePickerBox.getValue());
         
         String trainViewQuery = "SELECT company_name, start, end ,fare, class,type, time, total_seat,date FROM vehicle where start= '" + 

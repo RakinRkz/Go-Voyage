@@ -16,19 +16,17 @@
       </Text>
       <AnchorPane layoutY="123.0" prefHeight="415.0" prefWidth="706.0" style="-fx-background-color: #005f73;">
          <children>
-            <Button layoutX="628.0" layoutY="375.0" mnemonicParsing="false" style="-fx-background-color: #ff1a1a; -fx-text-fill: white; -fx-background-radius: 0;" text="Logout" textFill="WHITE" />
-            <TableView fx:id="previousTableView" layoutX="7.0" layoutY="15.0" prefHeight="283.0" prefWidth="541.0">
+            <TableView fx:id="previousTableView" layoutX="7.0" layoutY="15.0" prefHeight="359.0" prefWidth="614.0">
               <columns>
                 <TableColumn fx:id="paymentIDColumn" prefWidth="163.9999451637268" text="Payment ID" />
-                  <TableColumn fx:id="amountPaidColumn" prefWidth="181.60003662109375" text="Amount Paid" />
-                  <TableColumn fx:id="paymentDateColumn" prefWidth="195.19998168945312" text="Payment date" />
+                  <TableColumn fx:id="amountPaidColumn" prefWidth="181.60003662109375" text="Amount Paid (BDT)" />
+                  <TableColumn fx:id="paymentDateColumn" prefWidth="267.1999206542969" text="Payment date and Timestamp" />
               </columns>
             </TableView>
          </children>
       </AnchorPane>
       <AnchorPane layoutY="59.0" prefHeight="52.0" prefWidth="706.0" style="-fx-background-color: #005f73;">
          <children>
-            <Button layoutX="551.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #00b4d8; -fx-text-fill: white; -fx-background-radius: 0;" text="Home" textFill="WHITE" />
             <Button layoutX="616.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #00b4d8; -fx-text-fill: white; -fx-background-radius: 0;" text="Contact US" textFill="WHITE" />
             <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnAction" style="-fx-background-color: #00b4d8; -fx-text-fill: white; -fx-background-radius: 0;" text="Back" textFill="WHITE" />
          </children>

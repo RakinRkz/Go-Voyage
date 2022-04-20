@@ -28,16 +28,19 @@ public class PlaneViewThumbController implements Initializable {
     private Label CompanyTextField;
 
     @FXML
-    private Text EndTime;
+    private Text End;
 
     @FXML
-    private Text StartTime;
+    private Text Start;
 
     @FXML
     private Text TikcetPrice;
 
     @FXML
     private Button selectBtn;
+    
+    @FXML
+    private Text deptTime;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -48,19 +51,20 @@ public class PlaneViewThumbController implements Initializable {
         CompanyLogo.setImage(image);
         
         CompanyTextField.setText(plane.getCompany());
-        StartTime.setText(plane.getStarTime());
-        EndTime.setText(plane.getLandTime());
-        TikcetPrice.setText(plane.getPrice()+ " BDT");
-        
+        Start.setText(plane.getStar());
+        End.setText(plane.getLand());
+        TikcetPrice.setText(plane.getPrice());
+        deptTime.setText(plane.dept_time);
+        userInfo.payment_price = plane.getPrice();
     }
     
     @FXML
     void selectBtnOnAction(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("payment.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Maps.fxml"));
         Parent root = loader.load();
         
-        PaymentController paymentController = loader.getController();
-        paymentController.saveInfo(CompanyTextField.getText(),StartTime.getText(),EndTime.getText(),"9.15 AM",TikcetPrice.getText());
+        MapsController mapsController = loader.getController();
+        mapsController.showLocation(CompanyTextField.getText(),Start.getText(),End.getText(),"9.15 AM",TikcetPrice.getText());
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

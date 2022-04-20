@@ -9,9 +9,6 @@ package newproject;
  *
  * @author MSI
  */
-public class userInfo {
-    public static String current_username;
-    public static String ticket_date;
-    public static String vType;
-    public static String payment_price;
+public class AdminInfo {
+    public static String companyName;
 }

@@ -49,7 +49,7 @@ public class PaymentController implements Initializable {
 
     @FXML
     void cancel_payment_onClick(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ShowResults.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
         root = loader.load();
         
         stage= (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -92,7 +92,8 @@ public class PaymentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+        System.out.println(userInfo.payment_price);
+        priceLabel.setText(userInfo.payment_price);
     }    
     
 }

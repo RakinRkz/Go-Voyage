@@ -13,7 +13,7 @@
 <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.PlaneViewThumbController">
    <children>
       <Line endX="-12.707107543945312" endY="0.5928812026977539" startX="-100.0" strokeMiterLimit="8.0" translateX="257.0" translateY="62.0" />
-      <Text fx:id="EndTime" strokeType="OUTSIDE" strokeWidth="0.0" text="13.35" translateX="350.0" translateY="50.0">
+      <Text fx:id="End" strokeType="OUTSIDE" strokeWidth="0.0" text="Rajshahi" translateX="350.0" translateY="50.0">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>
@@ -41,7 +41,12 @@
             <Font name="Bodoni MT Bold" size="18.0" />
          </font>
       </Label>
-      <Text fx:id="StartTime" strokeType="OUTSIDE" strokeWidth="0.0" text="12.00" translateX="200.0" translateY="-95.0">
+      <Text fx:id="Start" strokeType="OUTSIDE" strokeWidth="0.0" text="Dhaka" translateX="180.0" translateY="-95.0">
+         <font>
+            <Font name="Bookman Old Style" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="deptTime" strokeType="OUTSIDE" strokeWidth="0.0" text="12.00 PM" translateX="260.0" translateY="-50.0">
          <font>
             <Font name="Bookman Old Style" size="18.0" />
          </font>

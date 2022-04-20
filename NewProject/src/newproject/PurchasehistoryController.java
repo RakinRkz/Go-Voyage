@@ -39,7 +39,7 @@ public class PurchasehistoryController implements Initializable {
     private TableColumn<PaymentInfo, String> paymentDateColumn;
 
     @FXML
-    private TableColumn<PaymentInfo, Integer> paymentIDColumn;
+    public TableColumn<PaymentInfo, Integer> paymentIDColumn;
 
     @FXML
     private TableColumn<PaymentInfo, String> userIDColumn;
@@ -74,23 +74,23 @@ public class PurchasehistoryController implements Initializable {
         Connection conDBNow = dbConnection.getConnection();
         
         System.out.println(userInfo.current_username);
-        String paymentViewQuery = "SELECT payment_Id, amount_paid, payment_date FROM mydb.payment where user_name= '" + userInfo.current_username + "' ";
+        String paymentViewQuery = "SELECT amount_paid, payment_date FROM mydb.payment where user_name= '" + userInfo.current_username + "' ";
         
         try{
             Statement stmt= conDBNow.createStatement();
             ResultSet rset = stmt.executeQuery(paymentViewQuery);
             
             
-            
+            rset.next();
             while(rset.next()){
                 
-                Integer queryPaymentID = rset.getInt("payment_Id");
+//                int queryPaymentID = rset.getInt("payment_Id");
 //                String queryUserName = rset.getString("user_name"); 
                 String queryAmountPaid = rset.getString("amount_paid");
                 String queryPaymentDate =  rset.getString("payment_date");
 //                System.out.println(queryPaymentID);
                 
-                paymentList.add(new PaymentInfo(queryPaymentID,queryAmountPaid, queryPaymentDate));
+                paymentList.add(new PaymentInfo(101,queryAmountPaid, queryPaymentDate));
                 
                 
                 paymentIDColumn.setCellValueFactory(new PropertyValueFactory<>("payment_Id"));

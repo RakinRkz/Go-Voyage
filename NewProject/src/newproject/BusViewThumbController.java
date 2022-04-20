@@ -55,7 +55,8 @@ public class BusViewThumbController implements Initializable {
         FromStation.setText(train.getFrom());
         ToStation.setText(train.getTo());
         DeptTime.setText(train.getSchedule());
-        Price.setText(train.getPrice().toString());        
+        Price.setText(train.getPrice().toString());
+        userInfo.payment_price = train.getPrice().toString();
     }
     
     @FXML

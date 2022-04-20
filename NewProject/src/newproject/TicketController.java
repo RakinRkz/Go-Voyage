@@ -61,17 +61,37 @@ public class TicketController implements Initializable {
     private Text ticketNO;
 
     @FXML
-    private Button goBackBtn;
+    private Button homeBtn;
+
+    @FXML
+    private Button mailMeBtn;
+    
+    @FXML
+    private Button saveTicketBtn;
 
     @FXML
     private Text time;
-
     @FXML
-    void goBackBtnOnAction(ActionEvent event) throws IOException {
-
+    private Text date_box;
+    
+    @FXML
+    void saveTicketBtnOnAction(ActionEvent event) throws IOException {
         saveToDatabase();
         takeScreenShot(userInfo.current_username + " ticket");
+    }
+    
+    @FXML
+    void mailMeBtnOnAction(ActionEvent event) throws IOException {
+        saveToDatabase();
+        takeScreenShot(userInfo.current_username + " ticket");        
         sendMail();
+    }    
+
+    @FXML
+    void homeBtnOnAction(ActionEvent event) throws IOException {
+        saveToDatabase();
+        takeScreenShot(userInfo.current_username + " ticket"); 
+        
         Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -116,6 +136,9 @@ public class TicketController implements Initializable {
         ToLocation.setText(e);
         time.setText(d);
         price.setText(p);
+        userInfo.payment_price = p;
+        System.out.println(userInfo.ticket_date);
+        date_box.setText(userInfo.ticket_date);
     }
 
     String payment_ID;

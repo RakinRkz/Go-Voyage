@@ -23,6 +23,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class MapsController implements Initializable {
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -35,23 +36,23 @@ public class MapsController implements Initializable {
 
     @FXML
     private Button load;
-    
+
     @FXML
     private Button loadBtn;
-    
+
     @FXML
     private Button proceed_payment_btn;
 
     private WebEngine engine;
 
     private String startLocation;
-    
+
     String company;
     String endLocation;
     String deptTime;
     String fare;
-    
-    void showLocation(String companyName,String start,String end,String dept,String price) {
+
+    void showLocation(String companyName, String start, String end, String dept, String price) {
         company = companyName;
         startLocation = start;
         endLocation = end;
@@ -69,7 +70,7 @@ public class MapsController implements Initializable {
         engine = webView.getEngine();
         engine.load(url);
     }
-    
+
     @FXML
     void zoomIn(ActionEvent event) {
         webView.setZoom(1.25);
@@ -79,35 +80,67 @@ public class MapsController implements Initializable {
     void zoomOut(ActionEvent event) {
         webView.setZoom(.75);
     }
+
     @FXML
     void loadButtonOnAction(ActionEvent event) {
         databaseCon dbConnection = new databaseCon();
         Connection conDBNow = dbConnection.getConnection();
+        if (userInfo.vType.equals("train")) {
+            String query = "SELECT url from mydb.train_station_location WHERE location = '" + startLocation + "' ";
+            System.out.println(startLocation);
+            try {
+                Statement stmt = conDBNow.createStatement();
+                ResultSet rset = stmt.executeQuery(query);
+                while (rset.next()) {
+                    String queryUrl = rset.getString("url");
+                    System.out.println(queryUrl);
+                    loadLocation(queryUrl);
 
-        String query = "SELECT url from mydb.train_station_location WHERE location = '" + startLocation + "' ";
-        System.out.println(startLocation);
-        try {
-            Statement stmt = conDBNow.createStatement();
-            ResultSet rset = stmt.executeQuery(query);
-            while (rset.next()) {
-                String queryUrl = rset.getString("url");
-                System.out.println(queryUrl);
-                loadLocation(queryUrl);
+                }
+            } catch (SQLException ex) {
 
             }
-        } catch (SQLException ex) {
+        } else if (userInfo.vType.equals("bus")) {
+            String query = "SELECT url from mydb.bus_station_location WHERE location = '" + startLocation + "' ";
+            System.out.println(startLocation);
+            try {
+                Statement stmt = conDBNow.createStatement();
+                ResultSet rset = stmt.executeQuery(query);
+                while (rset.next()) {
+                    String queryUrl = rset.getString("url");
+                    System.out.println(queryUrl);
+                    loadLocation(queryUrl);
 
+                }
+            } catch (SQLException ex) {
+
+            }
+        } else if (userInfo.vType.equals("airplane")) {
+            String query = "SELECT url from mydb.airport_location WHERE location = '" + startLocation + "' ";
+            System.out.println(startLocation);
+            try {
+                Statement stmt = conDBNow.createStatement();
+                ResultSet rset = stmt.executeQuery(query);
+                while (rset.next()) {
+                    String queryUrl = rset.getString("url");
+                    System.out.println(queryUrl);
+                    loadLocation(queryUrl);
+
+                }
+            } catch (SQLException ex) {
+
+            }
         }
     }
-    
+
     @FXML
     void proceed_payment_ButtonOnAction(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("payment.fxml"));
         root = loader.load();
         PaymentController paymentController = loader.getController();
-        paymentController.saveInfo(company,startLocation,endLocation,deptTime,fare);
-        
-        stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+        paymentController.saveInfo(company, startLocation, endLocation, deptTime, fare);
+
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -115,6 +148,5 @@ public class MapsController implements Initializable {
         stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
         stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
     }
-    
 
 }
