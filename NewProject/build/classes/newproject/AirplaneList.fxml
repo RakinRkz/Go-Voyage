@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #001219;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.AirplaneListController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #364f6b;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="From" textFill="WHITE" translateX="-50.0" translateY="100.0">
+               <font>
+                  <Font name="Bell MT Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="FromSelect" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: white; -fx-border-width: .5;" translateX="80.0" translateY="80.0" />
+            <VBox fx:id="dashboard" maxWidth="100.0" prefHeight="400.0" prefWidth="50.0" style="-fx-background-color: #3fc1C9; -fx-background-radius: 0 30 30 8;" stylesheets="@airplanelist.css" translateX="-150.0" translateY="30.0" VBox.vgrow="NEVER">
+               <children>
+                  <ImageView fx:id="homeBtn" fitHeight="37.0" fitWidth="52.0" onMouseClicked="#homeBtnOnAction" pickOnBounds="true" preserveRatio="true" translateY="50.0">
+                     <image>
+                        <Image url="@../images/home.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="backBtn" fitHeight="37.0" fitWidth="38.0" onMouseClicked="#backBtnOnAction" pickOnBounds="true" preserveRatio="true" translateY="50.0">
+                     <image>
+                        <Image url="@../images/go-back-arrow.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="48.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" translateY="50.0">
+                     <image>
+                        <Image url="@../images/settings.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="exitBtn" fitHeight="48.0" fitWidth="42.0" onMouseClicked="#exitBtnOnAction" pickOnBounds="true" preserveRatio="true" translateY="50.0">
+                     <image>
+                        <Image url="@../images/logout.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </VBox>
+            <Label text="To" textFill="WHITE" translateX="-50.0" translateY="-280.0">
+               <font>
+                  <Font name="Bell MT Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="ToSelect" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: white; -fx-border-width: .5;" translateX="80.0" translateY="-300.0" />
+            <DatePicker fx:id="DateSelect" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: .5;" translateX="90.0" translateY="-250.0" />
+            <Label text="Date" textFill="WHITE" translateX="-50.0" translateY="-275.0">
+               <font>
+                  <Font name="Bell MT Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="findBtn" mnemonicParsing="false" onAction="#findBtnOnAction" prefHeight="38.0" prefWidth="144.0" style="-fx-background-color: #24A0ED; -fx-background-radius: 0;" text="Find" textFill="WHITE" translateX="85.0" translateY="-200.0">
+               <font>
+                  <Font name="Bodoni MT Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <HBox prefHeight="445.0" prefWidth="578.0" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane prefHeight="800.0" prefWidth="882.0">
+               <content>
+                  <GridPane fx:id="planeGrid">
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

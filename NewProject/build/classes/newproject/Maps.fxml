@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1080.0" style="-fx-background-color: #001219;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.MapsController">
+    <stylesheets>
+        <URL value="@maps.css" />
+    </stylesheets>
+   <children>
+      <WebView fx:id="webView" layoutY="100.0" prefWidth="1080.0" />
+      <Button fx:id="loadBtn" layoutX="154.0" layoutY="44.0" mnemonicParsing="false" onAction="#loadButtonOnAction" style="-fx-background-color: #24A0ED; -fx-background-radius: 0; -fx-text-fill: white;" text="Load Map" />
+      <Button fx:id="proceed_payment_btn" layoutX="694.0" layoutY="44.0" mnemonicParsing="false" onAction="#proceed_payment_ButtonOnAction" style="-fx-background-color: #24A0ED; -fx-background-radius: 0; -fx-text-fill: white;" text="Proceed to Payment" />
+   </children>
+</AnchorPane>

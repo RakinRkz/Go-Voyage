@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<div id="googleMap" style="width:100%;height:800px;"></div>
+
+<script>
+  function addMarker(coords){
+
+  }
+function myMap() {
+  var options= {
+    center:{lat:23.990058830624587,lng:90.38163336434461},
+    zoom:18,
+  };
+  var map = new google.maps.Map(document.getElementById("googleMap"),options);
+
+  var marker = new google.maps.Marker({position: myCenter});
+
+  marker.setMap(map);
+}
+</script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE_KDcVplpt0XGiEir_NoGgJT3kBAqDXA&callback=myMap"></script>
+
+</body>
+</html>

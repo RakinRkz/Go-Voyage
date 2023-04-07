@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="newproject.PaymentController">
+   <children>
+      <Text layoutX="305.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount: " wrappingWidth="54.936767578125" />
+      <Button fx:id="confirm_btn" layoutX="278.0" layoutY="336.0" mnemonicParsing="false" onAction="#confirm_payment_onClick" prefHeight="34.0" prefWidth="185.0" style="-fx-background-color: #e2136e;" text="Confirm" textFill="WHITE" />
+      <Label fx:id="priceLabel" layoutX="360.0" layoutY="48.0" prefHeight="18.0" prefWidth="36.0" text="600">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Text layoutX="401.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BDT" />
+      <Button fx:id="cancel_Btn" layoutX="74.0" layoutY="336.0" mnemonicParsing="false" onAction="#cancel_payment_onClick" prefHeight="34.0" prefWidth="186.0" style="-fx-background-color: #e2136e;" text="Cancel" textFill="WHITE" />
+      <ImageView fitHeight="217.0" fitWidth="219.0" layoutX="168.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bkash.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="155.0" layoutX="90.0" layoutY="17.0">
+         <image>
+            <Image url="@../images/bkash_logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
